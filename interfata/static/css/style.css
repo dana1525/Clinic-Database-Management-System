@@ -1,0 +1,96 @@
+body {
+    font-family: 'Arial';
+    margin: 0;  /*eliminare spatii implicite*/
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    text-align: center;
+}
+
+/*titlu*/
+h1 {
+    margin-top: 20px;
+    font-size: 2.5rem; /*2.5 unitati relative la font-ul paginii*/
+    color: #4a90e2;
+}
+
+/*tabele container*/
+/*lista tabelelor*/
+.tables-container ul { 
+    display: flex;  /*aranjare elemente din container in linie(sistem flexibil)*/
+    flex-wrap: wrap; /*elementele trec pe o linie noua daca nu incap pe acelasi rand*/
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    list-style: none;
+    margin-top: 30px;
+}
+
+/*fiecare tabel*/
+.tables-container li {
+    flex: 1 1 calc(33.33% - 20px); /*latime flexibila pentru fiecare element, 33.33% din rand - distanta dintre ele*/
+    max-width: 300px;
+}
+
+.tables-container a {
+    display: block;
+    padding: 15px 10px;
+    background-color: #e9f5ff;
+    color: #007bff;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease; /*tranzitii mai fluide, ex la hover*/
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.tables-container a:hover {
+    background-color: #007bff;
+    color: #ffffff;
+    transform: translateY(-5px); /*ridica elementul cu 5 pixeli la hover*/
+}
+
+/* cerințe container */
+.cerinte-container {
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.cerinte-container h2 {
+    margin-bottom: 20px;
+    color: #4a90e2;
+    font-size: 1.8rem;
+}
+
+.cerinte-container .columns {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.cerinte-container .column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cerinte-container a {
+    display: block;
+    padding: 12px 20px;
+    background-color: #e1f5e1;
+    color: #106113;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.cerinte-container a:hover {
+    background-color: #579859; 
+    color: #ffffff;
+    transform: translateY(-3px);
+}

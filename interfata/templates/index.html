@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinica Medicala</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <h1>Clinică Medicală</h1>
+    
+    <div class="tables-container">
+        <ul>
+            <li><a href="/list/ANALIZA">ANALIZE</a></li>
+            <li><a href="/list/CONSULTATIE">CONSULTATII</a></li>
+            <li><a href="/list/DEPARTAMENT">DEPARTAMENTE</a></li>
+            <li><a href="/list/DIAGNOSTIC">DIAGNOSTICE</a></li>
+            <li><a href="/list/DOCTOR">DOCTORI</a></li>
+            <li><a href="/list/PACIENT">PACIENTI</a></li>
+            <li><a href="/list/PROGRAM">PROGRAME</a></li>
+            <li><a href="/list/TRATAMENT">TRATAMENTE</a></li>
+        </ul>
+    </div>
+    
+    <div class="cerinte-container">
+        <h2>Cerințe</h2>
+        <div class="columns">
+            <div class="column">
+                <a href="/punctul_c">Rezultate Punctul C</a>
+                <a href="/punctul_d">Rezultate Punctul D</a>
+            </div>
+            <div class="column">
+                <a href="/viz_compusa">Punctul F - Vizualizare Compusă</a>
+                <a href="/viz_complexa">Punctul F - Vizualizare Complexă</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

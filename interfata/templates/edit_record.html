@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Editare Înregistrare{% endblock %}
+
+{% block content %}
+    <h1>Editare înregistrare</h1>
+    <form method="post" action="{{ url_for('edit_record', table=table, record_id=record_id) }}">
+    {% if columns %}
+        {% for i in range(columns|length) %}
+            <label for="{{ columns[i] }}">{{ columns[i] }}:</label>  <!--la apasarea pe o eticheta, sa se mute cursorul -->
+            <input type="text" name="{{ columns[i] }}" value="{{ record[i] }}" {% if columns[i] in primary_keys %}readonly{% endif %}>
+            <br>
+        {% endfor %}
+    {% endif %}
+    <button type="submit">Salvare modificări</button>
+</form>
+   
+{% endblock %}

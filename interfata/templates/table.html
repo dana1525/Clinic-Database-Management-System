@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ table }}{% endblock %}
+
+{% block content %}
+    <h1>{{ table }}</h1>
+    <form method="post" action="{{ url_for('list_table_data', table=table) }}">
+        <label for="sort-column">Sortare după:</label>
+        <select id="sort-column" name="column">
+            {% for column in columns %}
+                <option value="{{ column }}">{{ column }}</option>
+            {% endfor %}
+        </select>
+    
+        <label for="sort-order">Ordonare:</label>
+        <select id="sort-order" name="order">   <!--lista derulanta-->
+            <option value="ASC">Ascendentă</option>
+            <option value="DESC">Descendentă</option>
+        </select>
+    
+        <button type="submit">Sortare</button>   
+        
+        <table border="1">
+            <thead>
+                <tr>
+                    {% for column in columns %}
+                        <th>{{ column }}</th>
+                    {% endfor %}
+                    <th>Actiuni</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in rows %}
+                    <tr>
+                        {% for value in row %}
+                            <td>{{ value }}</td>
+                        {% endfor %}
+                        <td>
+                            <a href="/edit/{{ table }}/{{ row[0] }}">Editare</a>
+                            <form method="post" action="{{ url_for('delete_record', table=table, record_id=row[0]) }}" style="display:inline;">
+                                <button type="submit">Stergere</button>
+                            </form>                                                       
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endblock %}
